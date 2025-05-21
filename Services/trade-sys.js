@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllEntities, createEntity, updateEntity, deleteEntity } = require('./dao');
+const { getAllEntities, createEntity, updateEntity, deleteEntity, getEntity } = require('./dao');
 const router = express.Router();
 const mongoose = require('mongoose');
 const buyStocks  = require("./traders-sys-service");
@@ -179,6 +179,12 @@ router.delete("/"+ traderEntity, async (req, res) => {
 router.post("/"+ "buy-stocks", async (req, res) => {
   
   try {
+
+    const {traderId, stockId, amount} = req.body;
+    const trader = await getEntity(traderEntity, traderId, traderSchema);
+
+    console.log("My trader = ", trader);
+    
    buyStocks();
     // const trader = await deleteEntity(req.body,traderEntity, traderSchema);
     // console.log(trader);
