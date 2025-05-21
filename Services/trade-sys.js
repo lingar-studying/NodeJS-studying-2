@@ -13,7 +13,7 @@ const sellStocks  = require("./traders-sys-service");
 const stockSchema = new mongoose.Schema({
   symbol: {
     type: String,
-    required: true,
+    // required: true,
     unique: true,
     uppercase: true,
     trim: true//cut the white spaces edge 
@@ -51,7 +51,7 @@ const traderSchema = new mongoose.Schema({
     type: Number,
     min: -50_000
   },
-  name: {
+  username: {
     type: String,
     required: true,
     trim: true,
