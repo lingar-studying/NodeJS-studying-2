@@ -83,7 +83,7 @@ router.get("/" + stockEntity, async (req, res) => {
     res.status(200).send(stocks);
     console.log(stocks);
   } catch (err) {
-    res.status(500).json({ message: "Failed to get stocks", error: err });
+    res.status(500).json({ message: "Failed to get stocks",  err });
   }
 });
 
@@ -136,7 +136,7 @@ router.get("/" + traderEntity, async (req, res) => {
     res.status(200).send(traders);
     console.log(traders);
   } catch (err) {
-    res.status(500).json({ message: "Failed to get traders", error: err });
+    res.status(500).json({ message: "Failed to get traders", err });
   }
 });
 
