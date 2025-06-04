@@ -1,8 +1,9 @@
 const { getEntity, updateEntity } = require("./dao");
 
 
-module.exports = async function buyStocks(traderId, amount, stockId) {
-
+// module.exports = async function buyStocks(traderId, amount, stockId) {
+// async function buyStocks(traderId, amount, stockId) {
+exports.buyStocks = async function(traderId, amount, stockId) {
     console.log("buy stocks ");
     
     //calculate the price
@@ -28,8 +29,13 @@ module.exports = async function buyStocks(traderId, amount, stockId) {
     
 }
 
-module.exports = function sellStocks(amount, stockId) {
-
+// module.exports = function sellStocks(amount, stockId) {
+// function sellStocks(amount, stockId) {
+    exports.sellStocks = function (amount, stockId) {
     console.log("sell stocks");
     
 }
+
+// module.exports = {
+//     buyStocks, sellStocks
+// }

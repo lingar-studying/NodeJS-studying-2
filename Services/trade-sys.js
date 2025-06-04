@@ -2,7 +2,9 @@ const express = require('express');
 const { getAllEntities, createEntity, updateEntity, deleteEntity, getEntity } = require('./dao');
 const router = express.Router();
 const mongoose = require('mongoose');
-const buyStocks  = require("./traders-sys-service");
+// const buyStocks = require("./traders-sys-service").buyStocks;
+const {buyStocks} = require("./traders-sys-service");
+
 const sellStocks  = require("./traders-sys-service");
 
 
