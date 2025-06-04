@@ -185,10 +185,10 @@ router.post("/"+ "buy-stocks", async (req, res) => {
 
     console.log("My trader = ", trader);
     
-   buyStocks();
+   const updatedTrader = await buyStocks(traderId, stockId, amount);
     // const trader = await deleteEntity(req.body,traderEntity, traderSchema);
     // console.log(trader);
-    res.status(200).send("hello");
+    res.status(200).send(updatedTrader);
   } catch (err) {
     res.status(500).json({ error: err.message});
   }
